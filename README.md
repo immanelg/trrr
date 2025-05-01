@@ -54,6 +54,13 @@ Same as above, but also copy the result to clipboard:
 xclip -o | trrr :ru | tee >(xclip -selection clipboard) | xargs -0 -I '{}' notify-send -- "trrr" '{}'
 ```
 
+Example for sxhkd config (~/.config/sxhkd/sxhkdrc):
+```
+super + {w,W}
+    xclip -o | trrr :{ru,en} | xargs -0 -I '\{\}' notify-send -- "trrr" '\{\}'
+```
+
+
 
 # License 
 0BSD
