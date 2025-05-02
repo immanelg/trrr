@@ -74,7 +74,12 @@ func main() {
         return
     }
 
-	translation := result[0].([]any)[0].([]any)[0] // yeah
-
-    fmt.Print(translation)
+	a := result[0].([]any)
+	var output strings.Builder
+	for _, t := range a {
+		t := t.([]any)
+		str := t[0].(string)
+		output.WriteString(str)
+	}
+	fmt.Print(output.String())
 }
